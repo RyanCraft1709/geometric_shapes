@@ -1,0 +1,78 @@
+import turtle
+import time
+
+# Create a new turtle screen and set its background color
+screen = turtle.Screen()
+screen.bgcolor("white")
+
+# Create 4 turtles to draw the shapes
+t1 = turtle.Turtle()
+t2 = turtle.Turtle()
+t3 = turtle.Turtle()
+t4 = turtle.Turtle()
+
+# Function to draw a square
+def draw_square(t, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    for _ in range(4):
+        t.forward(100)
+        t.right(90)
+    t.end_fill()
+
+# Function to draw a circle
+def draw_circle(t, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    t.circle(50)
+    t.end_fill()
+
+# Function to draw a triangle
+def draw_triangle(t, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    for _ in range(3):
+        t.forward(100)
+        t.left(120)
+    t.end_fill()
+
+# Function to draw a rectangle
+def draw_rectangle(t, color):
+    t.fillcolor(color)
+    t.begin_fill()
+    for _ in range(2):
+        t.forward(100)
+        t.right(90)
+        t.forward(50)
+        t.right(90)
+    t.end_fill()
+
+# Draw the shapes with animation
+t1.penup()
+t1.goto(-200, 0)
+t1.pendown()
+draw_square(t1, "red")
+
+time.sleep(1)
+
+t2.penup()
+t2.goto(-100, 0)
+t2.pendown()
+draw_circle(t2, "blue")
+
+time.sleep(1)
+
+t3.penup()
+t3.goto(0, 0)
+t3.pendown()
+draw_triangle(t3, "green")
+
+time.sleep(1)
+
+t4.penup()
+t4.goto(100, 0)
+t4.pendown()
+draw_rectangle(t4, "yellow")
+
+# Keep the window open
+turtle.done()
